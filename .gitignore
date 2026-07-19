@@ -8,9 +8,6 @@ __pycache__/
 # Environment Variables
 .env
 
-# ChromaDB
-chroma_db/
-
 # Database
 *.db
 

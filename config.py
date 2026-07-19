@@ -11,7 +11,7 @@ class Config:
     # ==========================
     # Flask Configuration
     # ==========================
-    SECRET_KEY = os.getenv("SECRET_KEY", "lexai-development-secret-key")
+    SECRET_KEY = os.getenv("SECRET_KEY", "LexAI@2026#9f7c4b1e2d8a5f6g")
     DEBUG = os.getenv("FLASK_DEBUG", "True").lower() == "true"
 
     # ==========================
@@ -57,16 +57,13 @@ class Config:
     TOP_K_RESULTS = 5
 
     # ==========================
-    # Ollama Configuration
+    # Groq Configuration
     # ==========================
-    OLLAMA_BASE_URL = os.getenv(
-        "OLLAMA_BASE_URL",
-        "http://localhost:11434"
-    )
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-    OLLAMA_MODEL = os.getenv(
-        "OLLAMA_MODEL",
-        "llama3"
+    LLM_MODEL = os.getenv(
+        "LLM_MODEL",
+        "llama-3.1-8b-instant"
     )
 
     # ==========================
