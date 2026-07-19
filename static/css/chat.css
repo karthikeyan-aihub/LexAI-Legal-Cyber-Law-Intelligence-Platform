@@ -1,0 +1,1270 @@
+/* ==========================================================
+   LexAI - Premium Chat Stylesheet
+   Version : 2.0
+   Author  : Karthikeyan S
+========================================================== */
+
+/* ==========================================================
+   Root Variables
+========================================================== */
+
+:root{
+
+    --chat-bg:#F8FAFC;
+    --chat-card:#FFFFFF;
+    --chat-border:#E5E7EB;
+
+    --user-msg:#2563EB;
+    --bot-msg:#FFFFFF;
+
+    --user-text:#FFFFFF;
+    --bot-text:#1F2937;
+
+    --primary:#2563EB;
+    --success:#10B981;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --shadow-sm:0 4px 10px rgba(0,0,0,.05);
+    --shadow-md:0 10px 25px rgba(0,0,0,.08);
+    --shadow-lg:0 18px 45px rgba(0,0,0,.12);
+
+    --radius:18px;
+
+    --transition:.30s ease;
+
+}
+
+/* ==========================================================
+   Chat Wrapper
+========================================================== */
+
+.chat-container{
+
+    margin:40px auto;
+
+}
+
+.chat-wrapper{
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   Chat Card
+========================================================== */
+
+.chat-card{
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:var(--chat-card);
+
+    box-shadow:var(--shadow-lg);
+
+    transition:var(--transition);
+
+}
+
+.chat-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.chat-header{
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1D4ED8
+    );
+
+    color:#fff;
+
+    padding:22px 28px;
+
+}
+
+.chat-header h3,
+.chat-header h4{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.chat-header p{
+
+    margin-top:8px;
+
+    opacity:.90;
+
+}
+
+/* ==========================================================
+   AI Status Badge
+========================================================== */
+
+.ai-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(8px);
+
+    font-size:.90rem;
+
+    margin-top:15px;
+
+}
+
+.ai-status i{
+
+    color:#22C55E;
+
+}
+
+/* ==========================================================
+   Chat Body
+========================================================== */
+
+.chat-body{
+
+    background:var(--chat-bg);
+
+    height:560px;
+
+    overflow-y:auto;
+
+    padding:30px;
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================================
+   Welcome Card
+========================================================== */
+
+.welcome-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow-sm);
+
+    border:1px solid var(--chat-border);
+
+    margin-bottom:25px;
+
+}
+
+.welcome-card h4{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.welcome-card ul{
+
+    margin-top:20px;
+
+    padding-left:18px;
+
+}
+
+.welcome-card li{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================================
+   Chat Messages
+========================================================== */
+
+.message{
+
+    display:flex;
+
+    margin-bottom:22px;
+
+    align-items:flex-end;
+
+    animation:fadeUp .35s ease;
+
+}
+
+.message.user{
+
+    justify-content:flex-end;
+
+}
+
+.message.bot{
+
+    justify-content:flex-start;
+
+}
+
+/* ==========================================================
+   Avatar
+========================================================== */
+
+.avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    flex-shrink:0;
+
+}
+
+.bot .avatar{
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1D4ED8
+    );
+
+    color:#fff;
+
+    margin-right:12px;
+
+}
+
+.user .avatar{
+
+    background:#E5E7EB;
+
+    color:#374151;
+
+    margin-left:12px;
+
+}
+
+/* ==========================================================
+   Bubble
+========================================================== */
+
+.message-bubble{
+
+    max-width:78%;
+
+    border-radius:18px;
+
+    padding:16px 18px;
+
+    line-height:1.75;
+
+    font-size:.96rem;
+
+    word-break:break-word;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.message.user .message-bubble{
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #1D4ED8
+    );
+
+    color:var(--user-text);
+
+    border-bottom-right-radius:6px;
+
+}
+
+.message.bot .message-bubble{
+
+    background:var(--bot-msg);
+
+    color:var(--bot-text);
+
+    border:1px solid var(--chat-border);
+
+    border-bottom-left-radius:6px;
+
+}
+
+/* ==========================================================
+   Time
+========================================================== */
+
+.message-time{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:.75rem;
+
+    opacity:.65;
+
+}
+
+/* ==========================================================
+   Markdown Rendering
+========================================================== */
+
+.message-bubble h1,
+.message-bubble h2,
+.message-bubble h3,
+.message-bubble h4,
+.message-bubble h5,
+.message-bubble h6{
+
+    margin:18px 0 10px;
+
+    font-weight:700;
+
+    color:inherit;
+
+}
+
+.message-bubble p{
+
+    margin-bottom:12px;
+
+}
+
+.message-bubble ul,
+.message-bubble ol{
+
+    padding-left:22px;
+
+    margin-bottom:15px;
+
+}
+
+.message-bubble li{
+
+    margin-bottom:8px;
+
+}
+
+.message-bubble strong{
+
+    font-weight:700;
+
+}
+
+.message-bubble em{
+
+    font-style:italic;
+
+}
+
+.message-bubble a{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+.message-bubble a:hover{
+
+    text-decoration:underline;
+
+}
+
+.message-bubble hr{
+
+    margin:18px 0;
+
+    border:none;
+
+    border-top:1px solid #E5E7EB;
+
+}
+
+/* ==========================================================
+   Inline Code
+========================================================== */
+
+.message-bubble code{
+
+    background:#EEF2FF;
+
+    color:#1D4ED8;
+
+    padding:3px 7px;
+
+    border-radius:6px;
+
+    font-size:.88rem;
+
+    font-family:Consolas, monospace;
+
+}
+
+/* ==========================================================
+   Code Block
+========================================================== */
+
+.message-bubble pre{
+
+    background:#111827;
+
+    color:#F9FAFB;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    overflow:auto;
+
+    margin:15px 0;
+
+}
+
+.message-bubble pre code{
+
+    background:none;
+
+    color:inherit;
+
+    padding:0;
+
+}
+
+/* ==========================================================
+   Blockquote
+========================================================== */
+
+.message-bubble blockquote{
+
+    border-left:4px solid var(--primary);
+
+    background:#F8FAFC;
+
+    padding:12px 18px;
+
+    margin:15px 0;
+
+    border-radius:10px;
+
+    font-style:italic;
+
+}
+
+/* ==========================================================
+   Tables
+========================================================== */
+
+.message-bubble table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:18px 0;
+
+}
+
+.message-bubble th,
+.message-bubble td{
+
+    border:1px solid #E5E7EB;
+
+    padding:10px;
+
+}
+
+.message-bubble th{
+
+    background:#F3F4F6;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Source Cards
+========================================================== */
+
+.sources{
+
+    margin-top:15px;
+
+}
+
+.source-card{
+
+    background:#F8FAFC;
+
+    border-left:4px solid var(--primary);
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    margin-top:10px;
+
+    transition:var(--transition);
+
+}
+
+.source-card:hover{
+
+    transform:translateX(5px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.source-card strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    margin-bottom:6px;
+
+}
+
+.source-card small{
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   Suggestion Buttons
+========================================================== */
+
+.suggestion-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.suggestion-btn{
+
+    border:none;
+
+    background:#FFFFFF;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:999px;
+
+    padding:10px 16px;
+
+    font-size:.90rem;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+.suggestion-btn:hover{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   Chat Footer
+========================================================== */
+
+.chat-footer{
+
+    background:#FFFFFF;
+
+    border-top:1px solid var(--chat-border);
+
+    padding:18px;
+
+}
+
+/* ==========================================================
+   Character Counter
+========================================================== */
+
+#char-counter{
+
+    font-size:.82rem;
+
+    color:#6B7280;
+
+    text-align:right;
+
+    margin-top:6px;
+
+}
+
+/* ==========================================================
+   Input Box
+========================================================== */
+
+.chat-input{
+
+    border-radius:14px;
+
+    border:1px solid #D1D5DB;
+
+    padding:14px 16px;
+
+    transition:var(--transition);
+
+    resize:none;
+
+}
+
+.chat-input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .20rem rgba(37,99,235,.15);
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.send-btn,
+.clear-btn,
+.download-btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.send-btn:hover,
+.clear-btn:hover,
+.download-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   Copy Button
+========================================================== */
+
+.copy-btn{
+
+    margin-top:12px;
+
+    border:none;
+
+    background:#EEF2FF;
+
+    color:#1D4ED8;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    font-size:.85rem;
+
+    transition:var(--transition);
+
+}
+
+.copy-btn:hover{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================================
+   Typing Indicator
+========================================================== */
+
+.typing-indicator{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    padding:12px 18px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.typing-indicator span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#9CA3AF;
+
+    animation:typingBounce 1.4s infinite ease-in-out;
+
+}
+
+.typing-indicator span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing-indicator span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes typingBounce{
+
+    0%,80%,100%{
+
+        transform:scale(.7);
+
+        opacity:.4;
+
+    }
+
+    40%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================================
+   Sidebar Cards
+========================================================== */
+
+.sidebar-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.sidebar-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.sidebar-card .card-header{
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   Custom Scrollbar
+========================================================== */
+
+.chat-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-body::-webkit-scrollbar-track{
+
+    background:#F3F4F6;
+
+    border-radius:10px;
+
+}
+
+.chat-body::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:10px;
+
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover{
+
+    background:#94A3B8;
+
+}
+
+/* Firefox */
+
+.chat-body{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#CBD5E1 #F3F4F6;
+
+}
+
+/* ==========================================================
+   Animations
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .45s ease both;
+
+}
+
+.fade-in{
+
+    animation:fadeIn .35s ease both;
+
+}
+
+/* ==========================================================
+   Loading State
+========================================================== */
+
+.loading{
+
+    pointer-events:none;
+
+    opacity:.65;
+
+}
+
+.loading button{
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================================
+   Disabled Buttons
+========================================================== */
+
+button:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none !important;
+
+}
+
+/* ==========================================================
+   Utility Classes
+========================================================== */
+
+.shadow-hover{
+
+    transition:var(--transition);
+
+}
+
+.shadow-hover:hover{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.cursor-pointer{
+
+    cursor:pointer;
+
+}
+
+.rounded-xl{
+
+    border-radius:20px;
+
+}
+
+.text-small{
+
+    font-size:.85rem;
+
+}
+
+/* ==========================================================
+   Dark Mode
+========================================================== */
+
+[data-theme="dark"]{
+
+    --chat-bg:#0F172A;
+
+    --chat-card:#1E293B;
+
+    --chat-border:#334155;
+
+    --bot-msg:#1E293B;
+
+    --bot-text:#F8FAFC;
+
+}
+
+[data-theme="dark"] .chat-card{
+
+    background:var(--chat-card);
+
+}
+
+[data-theme="dark"] .chat-body{
+
+    background:var(--chat-bg);
+
+}
+
+[data-theme="dark"] .chat-footer{
+
+    background:#1E293B;
+
+    border-color:#334155;
+
+}
+
+[data-theme="dark"] .welcome-card{
+
+    background:#1E293B;
+
+    border-color:#334155;
+
+    color:#F8FAFC;
+
+}
+
+[data-theme="dark"] .message.bot .message-bubble{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+    border-color:#334155;
+
+}
+
+[data-theme="dark"] .message-bubble blockquote{
+
+    background:#172554;
+
+}
+
+[data-theme="dark"] .message-bubble table th{
+
+    background:#334155;
+
+}
+
+[data-theme="dark"] .message-bubble td{
+
+    border-color:#475569;
+
+}
+
+[data-theme="dark"] .source-card{
+
+    background:#1E293B;
+
+}
+
+[data-theme="dark"] .suggestion-btn{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+    border-color:#475569;
+
+}
+
+[data-theme="dark"] .suggestion-btn:hover{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+}
+
+[data-theme="dark"] .chat-input{
+
+    background:#0F172A;
+
+    color:#F8FAFC;
+
+    border-color:#475569;
+
+}
+
+[data-theme="dark"] .chat-input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+[data-theme="dark"] .typing-indicator{
+
+    background:#1E293B;
+
+    border-color:#334155;
+
+}
+
+[data-theme="dark"] .sidebar-card{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+}
+
+[data-theme="dark"] #char-counter{
+
+    color:#CBD5E1;
+
+}
+
+/* ==========================================================
+   Responsive Design
+========================================================== */
+
+@media (max-width:992px){
+
+    .chat-body{
+
+        height:500px;
+
+        padding:22px;
+
+    }
+
+    .message-bubble{
+
+        max-width:85%;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .chat-header{
+
+        text-align:center;
+
+    }
+
+    .chat-body{
+
+        height:430px;
+
+        padding:18px;
+
+    }
+
+    .message{
+
+        margin-bottom:18px;
+
+    }
+
+    .message-bubble{
+
+        max-width:92%;
+
+        font-size:.93rem;
+
+    }
+
+    .avatar{
+
+        width:36px;
+
+        height:36px;
+
+        font-size:15px;
+
+    }
+
+    .welcome-card{
+
+        padding:20px;
+
+    }
+
+    .suggestion-container{
+
+        justify-content:center;
+
+    }
+
+    .send-btn,
+    .clear-btn,
+    .download-btn{
+
+        width:100%;
+
+        margin-top:10px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .chat-body{
+
+        height:360px;
+
+        padding:15px;
+
+    }
+
+    .message-bubble{
+
+        max-width:95%;
+
+        padding:14px;
+
+        font-size:.90rem;
+
+    }
+
+    .chat-header{
+
+        padding:18px;
+
+    }
+
+    .chat-header h3,
+    .chat-header h4{
+
+        font-size:1.25rem;
+
+    }
+
+    .welcome-card{
+
+        padding:18px;
+
+    }
+
+    .feature-icon{
+
+        font-size:2rem;
+
+    }
+
+}
+

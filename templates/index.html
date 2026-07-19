@@ -1,0 +1,980 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home | LexAI
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================================= -->
+<!-- Hero Section -->
+<!-- ========================================= -->
+
+<section class="hero-section fade-up">
+
+    <div class="row align-items-center g-5">
+
+        <!-- Left Content -->
+
+        <div class="col-lg-6">
+
+            <span class="badge bg-primary px-4 py-2 rounded-pill mb-4">
+
+                <i class="bi bi-stars me-2"></i>
+
+                AI-Powered Legal Intelligence Platform
+
+            </span>
+
+            <h1 class="display-3 fw-bold mb-3 text-gradient">
+
+                LexAI
+
+            </h1>
+
+            <h3 class="fw-semibold text-primary mb-4">
+
+                Legal & Cyber Law Intelligence Platform
+
+            </h3>
+
+            <p class="lead mb-4">
+
+                LexAI is an AI-powered Legal & Cyber Law Assistant that
+                uses Retrieval-Augmented Generation (RAG), LangChain,
+                ChromaDB, and Llama 3 to deliver accurate, citation-based
+                responses from official Indian legal and cyber security
+                documents.
+
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+
+                <a href="{{ url_for('chat.chat') }}"
+                   class="btn btn-primary btn-lg px-4"
+                   aria-label="Start Chat">
+
+                    <i class="bi bi-chat-dots-fill me-2"></i>
+
+                    Start Chat
+
+                </a>
+
+                <a href="{{ url_for('about.about') }}"
+                   class="btn btn-outline-primary btn-lg px-4"
+                   aria-label="Learn More">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+            <div class="mt-5">
+
+                <div class="row text-center g-3">
+
+                    <div class="col-4">
+
+                        <h2 class="fw-bold text-primary">
+
+                            24×7
+
+                        </h2>
+
+                        <small class="text-muted">
+
+                            AI Assistant
+
+                        </small>
+
+                    </div>
+
+                    <div class="col-4">
+
+                        <h2 class="fw-bold text-success">
+
+                            2300+
+
+                        </h2>
+
+                        <small class="text-muted">
+
+                            Knowledge Chunks
+
+                        </small>
+
+                    </div>
+
+                    <div class="col-4">
+
+                        <h2 class="fw-bold text-danger">
+
+                            12+
+
+                        </h2>
+
+                        <small class="text-muted">
+
+                            Legal Documents
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Image -->
+
+        <div class="col-lg-6 text-center">
+
+            <img src="{{ url_for('static', filename='images/hero.png') }}"
+                 class="img-fluid hero-image"
+                 alt="LexAI Hero">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Statistics -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+
+            LexAI at a Glance
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Built using modern AI technologies with trusted legal knowledge.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="card glass text-center h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-file-earmark-text feature-icon text-primary"></i>
+
+                    <h2 class="fw-bold">
+
+                        12+
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Official Legal Documents
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card glass text-center h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-database feature-icon text-success"></i>
+
+                    <h2 class="fw-bold">
+
+                        2300+
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Knowledge Chunks
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card glass text-center h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-cpu feature-icon text-danger"></i>
+
+                    <h2 class="fw-bold">
+
+                        Llama 3
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Local AI Model
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card glass text-center h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-lightning-charge feature-icon text-warning"></i>
+
+                    <h2 class="fw-bold">
+
+                        RAG
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Retrieval-Augmented Generation
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Why Choose LexAI -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+
+            Why Choose LexAI?
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Combining Artificial Intelligence with trusted legal knowledge
+            to simplify legal research and cyber law understanding.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-search feature-icon"></i>
+
+                    <h4 class="mb-3">
+
+                        Semantic Search
+
+                    </h4>
+
+                    <p>
+
+                        Retrieves the most relevant legal information using
+                        vector embeddings instead of simple keyword matching.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-check feature-icon text-success"></i>
+
+                    <h4 class="mb-3">
+
+                        Trusted Sources
+
+                    </h4>
+
+                    <p>
+
+                        Every response is generated from official Indian Acts,
+                        regulations and cyber security guidelines stored inside
+                        the knowledge base.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-journal-check feature-icon text-danger"></i>
+
+                    <h4 class="mb-3">
+
+                        Citation-Based Answers
+
+                    </h4>
+
+                    <p>
+
+                        Every response includes document references and page
+                        citations for transparency and verification.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Workflow -->
+<!-- ========================================= -->
+
+<section class="py-5 bg-light rounded-4 fade-up">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                How LexAI Works
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                From your question to an AI-generated,
+                evidence-backed answer.
+
+            </p>
+
+        </div>
+
+        <div class="row text-center g-4">
+
+            <div class="col-md-3">
+
+                <i class="bi bi-chat-square-text display-4 text-primary"></i>
+
+                <h5 class="mt-3">
+
+                    Ask
+
+                </h5>
+
+                <p>
+
+                    Ask any legal or cyber security question.
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <i class="bi bi-search-heart display-4 text-success"></i>
+
+                <h5 class="mt-3">
+
+                    Retrieve
+
+                </h5>
+
+                <p>
+
+                    Relevant legal documents are retrieved using
+                    semantic vector search.
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <i class="bi bi-cpu display-4 text-danger"></i>
+
+                <h5 class="mt-3">
+
+                    Generate
+
+                </h5>
+
+                <p>
+
+                    Llama 3 generates a context-aware response
+                    using RAG.
+
+                </p>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <i class="bi bi-file-earmark-check display-4 text-warning"></i>
+
+                <h5 class="mt-3">
+
+                    Verify
+
+                </h5>
+
+                <p>
+
+                    Answers include document citations and
+                    page references.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Trusted Legal Documents -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+
+            Trusted Legal Documents
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            LexAI retrieves information exclusively from official
+            Indian legal Acts, cyber security regulations,
+            and regulatory guidelines.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-shield-lock feature-icon text-primary"></i>
+
+                    <h5>
+
+                        Information Technology Act, 2000
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Including the Information Technology
+                        (Amendment) Act, 2008.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-person-check feature-icon text-success"></i>
+
+                    <h5>
+
+                        Digital Personal Data Protection Act
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Personal data protection,
+                        privacy and compliance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-bug feature-icon text-danger"></i>
+
+                    <h5>
+
+                        CERT-In Guidelines
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Cyber incident reporting,
+                        advisories and security practices.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-bank feature-icon text-warning"></i>
+
+                    <h5>
+
+                        RBI Cyber Security Guidelines
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Banking cyber security,
+                        compliance and regulatory directions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-file-earmark-text feature-icon text-info"></i>
+
+                    <h5>
+
+                        Bharatiya Nyaya Sanhita (BNS)
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Criminal law provisions applicable
+                        to cyber offences.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body">
+
+                    <i class="bi bi-journal-check feature-icon text-secondary"></i>
+
+                    <h5>
+
+                        BNSS & BSA
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Bharatiya Nagarik Suraksha Sanhita
+                        and Bharatiya Sakshya Adhiniyam.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Technology Stack -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+
+            Technology Stack
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Modern AI technologies powering LexAI.
+
+        </p>
+
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+
+        <span class="badge bg-primary fs-6 px-4 py-3">
+
+            Flask
+
+        </span>
+
+        <span class="badge bg-success fs-6 px-4 py-3">
+
+            LangChain
+
+        </span>
+
+        <span class="badge bg-warning text-dark fs-6 px-4 py-3">
+
+            ChromaDB
+
+        </span>
+
+        <span class="badge bg-info text-dark fs-6 px-4 py-3">
+
+            Ollama
+
+        </span>
+
+        <span class="badge bg-danger fs-6 px-4 py-3">
+
+            Llama 3
+
+        </span>
+
+        <span class="badge bg-secondary fs-6 px-4 py-3">
+
+            Sentence Transformers
+
+        </span>
+
+        <span class="badge bg-dark fs-6 px-4 py-3">
+
+            Bootstrap 5
+
+        </span>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- AI Capabilities -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="text-center mb-5">
+
+        <h2 class="section-title">
+
+            What Can LexAI Help You With?
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Explore Indian cyber laws, digital regulations, and legal
+            compliance using AI-powered retrieval and reasoning.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-shield-lock feature-icon text-primary"></i>
+
+                    <h5>
+
+                        Cyber Crime
+
+                    </h5>
+
+                    <p>
+
+                        Learn about cyber offences, penalties,
+                        reporting procedures, and legal provisions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-person-lock feature-icon text-success"></i>
+
+                    <h5>
+
+                        Data Privacy
+
+                    </h5>
+
+                    <p>
+
+                        Understand the Digital Personal Data Protection
+                        Act and privacy obligations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-bank feature-icon text-warning"></i>
+
+                    <h5>
+
+                        Banking Security
+
+                    </h5>
+
+                    <p>
+
+                        Explore RBI cyber security regulations,
+                        fraud prevention, and compliance guidance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card feature-card h-100">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-file-earmark-check feature-icon text-danger"></i>
+
+                    <h5>
+
+                        Legal Compliance
+
+                    </h5>
+
+                    <p>
+
+                        Get answers supported by official Acts,
+                        regulations, and government guidelines.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Final Call To Action -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="card glass border-0 shadow-lg rounded-4">
+
+        <div class="card-body text-center py-5 px-4">
+
+            <i class="bi bi-robot display-2 text-primary mb-4"></i>
+
+            <h2 class="fw-bold mb-3">
+
+                Ready to Explore Indian Cyber Laws with AI?
+
+            </h2>
+
+            <p class="lead mb-4">
+
+                Ask questions, retrieve trusted legal information,
+                and receive citation-based responses from official
+                legal documents in seconds.
+
+            </p>
+
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+
+                <a href="{{ url_for('chat.chat') }}"
+                   class="btn btn-success btn-lg px-5">
+
+                    <i class="bi bi-chat-dots-fill me-2"></i>
+
+                    Launch LexAI
+
+                </a>
+
+                <a href="{{ url_for('about.about') }}"
+                   class="btn btn-outline-primary btn-lg px-5">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    About Project
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Footer Banner -->
+<!-- ========================================= -->
+
+<section class="py-4 text-center">
+
+    <div class="alert alert-primary border-0 rounded-4 shadow-sm">
+
+        <h5 class="mb-2">
+
+            <i class="bi bi-shield-check me-2"></i>
+
+            Built on Official Legal Knowledge
+
+        </h5>
+
+        <p class="mb-0">
+
+            LexAI uses Retrieval-Augmented Generation (RAG) with official
+            Indian legal Acts, CERT-In advisories, RBI regulations,
+            and cyber security guidelines to provide transparent,
+            citation-supported responses.
+
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

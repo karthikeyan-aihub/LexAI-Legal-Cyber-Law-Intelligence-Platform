@@ -1,0 +1,444 @@
+{% extends "layout.html" %}
+
+{% block title %}
+404 | Page Not Found
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================================= -->
+<!-- 404 Hero -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center g-5">
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{{ url_for('static', filename='images/404.png') }}"
+                    alt="404 Illustration"
+                    class="img-fluid hero-image floating"
+                    style="max-width:420px;">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-danger rounded-pill px-4 py-2 mb-4">
+
+                    <i class="bi bi-exclamation-octagon-fill me-2"></i>
+
+                    Error 404
+
+                </span>
+
+                <h1 class="display-1 fw-bold text-primary mb-2">
+
+                    404
+
+                </h1>
+
+                <h2 class="fw-bold mb-4">
+
+                    Oops! The Page You're Looking For Doesn't Exist
+
+                </h2>
+
+                <p class="lead text-muted">
+
+                    The page may have been moved, deleted,
+                    or the URL might be incorrect.
+
+                    Don't worry—LexAI is still here to help you
+                    explore trusted Legal & Cyber Law knowledge.
+
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="{{ url_for('home.home') }}"
+                       class="btn btn-primary btn-lg">
+
+                        <i class="bi bi-house-door-fill me-2"></i>
+
+                        Home
+
+                    </a>
+
+                    <a href="{{ url_for('chat.chat') }}"
+                       class="btn btn-success btn-lg">
+
+                        <i class="bi bi-chat-dots-fill me-2"></i>
+
+                        Open LexAI
+
+                    </a>
+
+                    <button
+                        onclick="history.back()"
+                        class="btn btn-outline-secondary btn-lg">
+
+                        <i class="bi bi-arrow-left-circle me-2"></i>
+
+                        Go Back
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Quick Navigation -->
+<!-- ========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Continue Exploring
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Navigate to one of the sections below.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-house-door display-4 text-primary"></i>
+
+                        <h4 class="mt-4">
+
+                            Home
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Explore LexAI,
+                            features,
+                            technology stack,
+                            and legal resources.
+
+                        </p>
+
+                        <a href="{{ url_for('home.home') }}"
+                           class="btn btn-outline-primary">
+
+                            Visit Home
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-chat-dots display-4 text-success"></i>
+
+                        <h4 class="mt-4">
+
+                            AI Chat
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Ask questions about
+                            Indian Legal Acts,
+                            Cyber Laws,
+                            CERT-In,
+                            RBI Guidelines,
+                            and more.
+
+                        </p>
+
+                        <a href="{{ url_for('chat.chat') }}"
+                           class="btn btn-success">
+
+                            Start Chat
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-info-circle display-4 text-warning"></i>
+
+                        <h4 class="mt-4">
+
+                            About LexAI
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Learn how LexAI
+                            combines RAG,
+                            semantic search,
+                            and Llama 3.
+
+                        </p>
+
+                        <a href="{{ url_for('about.about') }}"
+                           class="btn btn-warning text-dark">
+
+                            Learn More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- AI Assistant Card -->
+<!-- ========================================= -->
+
+<section class="py-4">
+
+    <div class="container">
+
+        <div class="card glass border-0 shadow-lg">
+
+            <div class="card-body text-center py-5">
+
+                <div class="mb-4">
+
+                    <i class="bi bi-robot display-1 text-primary"></i>
+
+                </div>
+
+                <h2 class="fw-bold">
+
+                    Need Legal Information Instead?
+
+                </h2>
+
+                <p class="lead text-muted mt-3">
+
+                    LexAI can answer questions using trusted
+                    Indian Legal Acts,
+                    Cyber Security Guidelines,
+                    and Government publications through
+                    Retrieval-Augmented Generation (RAG).
+
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="{{ url_for('chat.chat') }}"
+                       class="btn btn-primary btn-lg px-5">
+
+                        <i class="bi bi-stars me-2"></i>
+
+                        Ask LexAI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Popular Questions -->
+<!-- ========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Popular Questions
+
+            </h2>
+
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+
+                <div class="card glass h-100">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+
+                        What is phishing under the IT Act?
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card glass h-100">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+
+                        Explain the DPDP Act 2023.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card glass h-100">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+
+                        What are CERT-In reporting timelines?
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card glass h-100">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+
+                        RBI Cyber Security Guidelines overview.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Footer CTA -->
+<!-- ========================================= -->
+
+<section class="py-5 text-center">
+
+    <div class="container">
+
+        <div class="card glass border-0 shadow-lg">
+
+            <div class="card-body py-5">
+
+                <h2 class="fw-bold mb-3">
+
+                    Lost a Page, Not Your Way
+
+                </h2>
+
+                <p class="lead text-muted">
+
+                    Continue exploring trusted legal intelligence with
+                    AI-powered semantic search and Retrieval-Augmented
+                    Generation.
+
+                </p>
+
+                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+
+                    <a href="{{ url_for('home.home') }}"
+                       class="btn btn-outline-primary btn-lg">
+
+                        <i class="bi bi-house-door-fill me-2"></i>
+
+                        Home
+
+                    </a>
+
+                    <a href="{{ url_for('chat.chat') }}"
+                    class="btn btn-primary btn-lg">
+
+                        <i class="bi bi-chat-dots-fill me-2"></i>
+
+                        Launch LexAI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

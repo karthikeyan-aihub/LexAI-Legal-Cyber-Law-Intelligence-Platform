@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ========================================= -->
+    <!-- Meta -->
+    <!-- ========================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+
+    <meta name="description"
+        content="LexAI - AI Powered Legal & Cyber Law Intelligence Platform">
+
+    <meta name="keywords"
+        content="LexAI, Artificial Intelligence, Legal AI, Cyber Law, RAG, LangChain, ChromaDB, Ollama, Llama3">
+
+    <meta name="author"
+        content="Karthikeyan S">
+
+    <meta name="theme-color"
+        content="#0F172A">
+
+    <title>
+
+        {% block title %}
+
+        LexAI | Legal & Cyber Law Intelligence Platform
+
+        {% endblock %}
+
+    </title>
+
+    <!-- ========================================= -->
+    <!-- Favicons -->
+    <!-- ========================================= -->
+
+    <link rel="icon"
+        type="image/x-icon"
+        href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <link rel="apple-touch-icon"
+        href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <!-- ========================================= -->
+    <!-- Bootstrap -->
+    <!-- ========================================= -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ========================================= -->
+    <!-- Global Styles -->
+    <!-- ========================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    {% block styles %}
+    {% endblock %}
+
+    {% block head_extra %}
+    {% endblock %}
+
+</head>
+
+<body class="fade-page">
+
+<!-- ========================================= -->
+<!-- Global Loading Overlay -->
+<!-- ========================================= -->
+
+<div id="page-loader">
+
+    <div class="loader-content">
+
+        <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            class="loader-logo"
+            alt="LexAI">
+
+        <div
+            class="spinner-border text-primary mt-3"
+            role="status">
+
+            <span class="visually-hidden">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+        <p class="mt-3 text-secondary fw-semibold">
+
+            Initializing LexAI...
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Navigation -->
+<!-- ========================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a
+            class="navbar-brand d-flex align-items-center"
+            href="{{ url_for('home.home') }}">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="LexAI"
+                class="brand-logo">
+
+            <div class="ms-3">
+
+                <small class="brand-subtitle">
+
+                    Legal & Cyber Law Assistant
+
+                </small>
+
+            </div>
+
+        </a>
+
+        <!-- Mobile Toggle -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <!-- Home -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link {% if request.endpoint=='home.home' %}active{% endif %}"
+                        href="{{ url_for('home.home') }}">
+
+                        <i class="bi bi-house-door-fill me-1"></i>
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <!-- Chat -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link {% if request.endpoint=='chat.chat' %}active{% endif %}"
+                        href="{{ url_for('chat.chat') }}">
+
+                        <i class="bi bi-chat-dots-fill me-1"></i>
+
+                        Chat
+
+                    </a>
+
+                </li>
+
+                <!-- About -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link {% if request.endpoint=='about.about' %}active{% endif %}"
+                        href="{{ url_for('about.about') }}">
+
+                        <i class="bi bi-info-circle-fill me-1"></i>
+
+                        About
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ========================================= -->
+<!-- Main Content -->
+<!-- ========================================= -->
+
+<main class="container py-5">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+<!-- ========================================= -->
+<!-- Footer -->
+<!-- ========================================= -->
+
+<footer class="footer mt-auto">
+
+    <div class="container">
+
+        <div class="row gy-5">
+
+            <!-- Brand -->
+
+            <div class="col-lg-5">
+
+                <div class="d-flex align-items-center mb-3">
+
+                    <img
+                        src="{{ url_for('static', filename='images/logo.png') }}"
+                        class="brand-logo me-3"
+                        alt="LexAI Logo">
+
+                    <div>
+
+                        <small class="text-secondary">
+
+                            Legal & Cyber Law Intelligence Platform
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <p class="text-secondary">
+
+                    LexAI is an AI-powered Legal & Cyber Law Intelligence
+                    Platform that leverages Retrieval-Augmented Generation
+                    (RAG), LangChain, ChromaDB, and Ollama to provide
+                    reliable, context-aware answers from official legal
+                    documents.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="container">
+
+    <div class="row align-items-center">
+
+        <div class="col-md-6">
+
+            <small class="text-secondary">
+                © 2026 <strong>LexAI</strong> | Designed by
+                <strong>Karthikeyan Selvamani</strong>
+            </small>
+
+        </div>
+
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+            <a href="https://github.com/karthikeyan-aihub"
+            target="_blank"
+            class="text-secondary me-3 text-decoration-none"
+            title="GitHub">
+
+                <i class="bi bi-github fs-5"></i>
+
+            </a>
+
+            <a href="https://linkedin.com/in/karthikeyan-selvamani"
+            target="_blank"
+            class="text-secondary me-3 text-decoration-none"
+            title="LinkedIn">
+
+                <i class="bi bi-linkedin fs-5"></i>
+
+            </a>
+
+            <small class="text-secondary d-block d-md-inline ms-md-2">
+                Built with Flask, LangChain & AI
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+</footer>
+
+<!-- ========================================= -->
+<!-- Scroll To Top -->
+<!-- ========================================= -->
+
+<button
+    id="scrollTopBtn"
+    class="btn btn-primary rounded-circle shadow-lg">
+
+    <i class="bi bi-arrow-up"></i>
+
+</button>
+
+<!-- ========================================= -->
+<!-- Global Toast Container -->
+<!-- ========================================= -->
+
+<div
+    class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div
+        id="liveToast"
+        class="toast align-items-center border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+
+        <div class="d-flex">
+
+            <div
+                id="toastMessage"
+                class="toast-body">
+
+                Welcome to LexAI
+
+            </div>
+
+            <button
+                type="button"
+                class="btn-close me-2 m-auto"
+                data-bs-dismiss="toast">
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Reusable Confirmation Modal -->
+<!-- ========================================= -->
+
+<div
+    class="modal fade"
+    id="confirmModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Confirmation
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p id="confirmMessage">
+
+                    Are you sure?
+
+                </p>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    id="confirmYesBtn"
+                    type="button"
+                    class="btn btn-danger">
+
+                    Yes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Bootstrap Bundle -->
+<!-- ========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- ========================================= -->
+<!-- Markdown Parser -->
+<!-- ========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+</script>
+
+<!-- ========================================= -->
+<!-- jsPDF -->
+<!-- ========================================= -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+</script>
+
+<!-- ========================================= -->
+<!-- Global JavaScript -->
+<!-- ========================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+<!-- ========================================= -->
+<!-- Page Specific Scripts -->
+<!-- ========================================= -->
+
+{% block scripts %}
+{% endblock %}
+
+<!-- ========================================= -->
+<!-- Global Helper Functions -->
+<!-- ========================================= -->
+
+<script>
+
+/* ==========================================================
+   Global Toast
+========================================================== */
+
+function showToast(message,type="primary"){
+
+    const toast=document.getElementById("liveToast");
+
+    const body=document.getElementById("toastMessage");
+
+    if(!toast || !body) return;
+
+    toast.className="toast align-items-center text-bg-"+type+" border-0";
+
+    body.innerHTML=message;
+
+    new bootstrap.Toast(toast,{
+        delay:3000
+    }).show();
+
+}
+
+/* ==========================================================
+   Loading Overlay
+========================================================== */
+
+function showLoader(){
+
+    document
+    .getElementById("page-loader")
+    ?.classList.remove("d-none");
+
+}
+
+function hideLoader(){
+
+    document
+    .getElementById("page-loader")
+    ?.classList.add("d-none");
+
+}
+
+/* ==========================================================
+   Hide Loader after page load
+========================================================== */
+
+window.addEventListener("load",()=>{
+
+    hideLoader();
+
+});
+
+/* ==========================================================
+   Scroll To Top
+========================================================== */
+
+const scrollBtn=document.getElementById("scrollTopBtn");
+
+if(scrollBtn){
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>300){
+
+            scrollBtn.classList.add("show");
+
+        }
+
+        else{
+
+            scrollBtn.classList.remove("show");
+
+        }
+
+    });
+
+    scrollBtn.addEventListener("click",()=>{
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+}
+
+/* ==========================================================
+   Dark Mode
+========================================================== */
+
+const themeToggle=document.getElementById("themeToggle");
+
+const themeIcon=document.getElementById("themeIcon");
+
+function applyTheme(theme){
+
+    document.body.setAttribute("data-theme",theme);
+
+    localStorage.setItem("theme",theme);
+
+    if(theme==="dark"){
+
+        themeIcon.className="bi bi-sun-fill";
+
+    }
+
+    else{
+
+        themeIcon.className="bi bi-moon-stars-fill";
+
+    }
+
+}
+
+const savedTheme=localStorage.getItem("theme") || "light";
+
+applyTheme(savedTheme);
+
+themeToggle?.addEventListener("click",()=>{
+
+    const current=document.body.getAttribute("data-theme");
+
+    applyTheme(
+
+        current==="dark"
+
+        ? "light"
+
+        : "dark"
+
+    );
+
+});
+
+/* ==========================================================
+   Page Fade Animation
+========================================================== */
+
+document.body.classList.add("page-loaded");
+
+/* ==========================================================
+   Active Navbar (Fallback)
+========================================================== */
+
+document.querySelectorAll(".nav-link").forEach(link=>{
+
+    if(link.href===window.location.href){
+
+        link.classList.add("active");
+
+    }
+
+});
+
+/* ==========================================================
+   Console Welcome
+========================================================== */
+
+console.log(
+
+"%cLexAI v2.0 Loaded",
+
+"color:#2563EB;font-size:16px;font-weight:bold"
+
+);
+
+</script>
+
+</body>
+
+</html>

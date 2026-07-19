@@ -1,0 +1,27 @@
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# ChromaDB
+chroma_db/
+
+# Database
+*.db
+
+# Logs
+logs/
+
+# VS Code
+.vscode/
+
+# Uploaded Files
+uploads/
+
+# macOS
+.DS_Store

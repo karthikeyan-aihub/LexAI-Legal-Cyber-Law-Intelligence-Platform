@@ -1,0 +1,444 @@
+{% extends "layout.html" %}
+
+{% block title %}
+500 | Internal Server Error
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================================= -->
+<!-- Hero Section -->
+<!-- ========================================= -->
+
+<section class="py-5 fade-up">
+
+    <div class="container">
+
+        <div class="row align-items-center justify-content-center g-5">
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{{ url_for('static', filename='images/500.png') }}"
+                    alt="500 Error"
+                    class="img-fluid hero-image floating"
+                    style="max-width:420px;">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-danger rounded-pill px-4 py-2 mb-4">
+
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+
+                    Internal Server Error
+
+                </span>
+
+                <h1 class="display-1 fw-bold text-danger">
+
+                    500
+
+                </h1>
+
+                <h2 class="fw-bold mb-4">
+
+                    Something Went Wrong
+
+                </h2>
+
+                <p class="lead text-muted">
+
+                    LexAI encountered an unexpected server error while
+                    processing your request.
+
+                </p>
+
+                <p>
+
+                    This problem is usually temporary.
+                    Please try your request again or return to the homepage.
+
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <button
+                        onclick="location.reload();"
+                        class="btn btn-danger btn-lg">
+
+                        <i class="bi bi-arrow-clockwise me-2"></i>
+
+                        Try Again
+
+                    </button>
+
+                    <a href="{{ url_for('home.home') }}"
+                       class="btn btn-primary btn-lg">
+
+                        <i class="bi bi-house-door-fill me-2"></i>
+
+                        Home
+
+                    </a>
+
+                    <button
+                        onclick="history.back();"
+                        class="btn btn-outline-secondary btn-lg">
+
+                        <i class="bi bi-arrow-left-circle me-2"></i>
+
+                        Go Back
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- What Happened -->
+<!-- ========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-server display-4 text-danger"></i>
+
+                        <h4 class="mt-4">
+
+                            Server Issue
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            An unexpected problem occurred while processing
+                            your request.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-arrow-repeat display-4 text-primary"></i>
+
+                        <h4 class="mt-4">
+
+                            Try Again
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Refresh the page after a few seconds.
+                            Temporary issues usually resolve quickly.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card glass feature-card h-100 text-center">
+
+                    <div class="card-body p-4">
+
+                        <i class="bi bi-shield-check display-4 text-success"></i>
+
+                        <h4 class="mt-4">
+
+                            Your Data is Safe
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            This error does not affect your stored legal
+                            knowledge or application data.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- AI Assistant -->
+<!-- ========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="card glass border-0 shadow-lg">
+
+            <div class="card-body py-5 text-center">
+
+                <i class="bi bi-robot display-1 text-primary mb-4"></i>
+
+                <h2 class="fw-bold">
+
+                    LexAI Will Be Back Shortly
+
+                </h2>
+
+                <p class="lead text-muted mt-3">
+
+                    If the issue continues, return to the homepage
+                    and try your request again later.
+
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="{{ url_for('home.home') }}"
+                       class="btn btn-primary btn-lg px-5">
+
+                        <i class="bi bi-house-door-fill me-2"></i>
+
+                        Return Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Helpful Suggestions -->
+<!-- ========================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                What You Can Do
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                A few simple steps may resolve the problem.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="card glass h-100 text-center">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-arrow-clockwise display-5 text-primary"></i>
+
+                        <h5 class="mt-3">
+
+                            Refresh
+
+                        </h5>
+
+                        <p>
+
+                            Reload the page and try again.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card glass h-100 text-center">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-wifi display-5 text-success"></i>
+
+                        <h5 class="mt-3">
+
+                            Check Internet
+
+                        </h5>
+
+                        <p>
+
+                            Verify your network connection.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card glass h-100 text-center">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-clock-history display-5 text-warning"></i>
+
+                        <h5 class="mt-3">
+
+                            Wait
+
+                        </h5>
+
+                        <p>
+
+                            Temporary server issues usually resolve quickly.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card glass h-100 text-center">
+
+                    <div class="card-body">
+
+                        <i class="bi bi-house display-5 text-danger"></i>
+
+                        <h5 class="mt-3">
+
+                            Home
+
+                        </h5>
+
+                        <p>
+
+                            Return to the homepage and continue browsing.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Footer CTA -->
+<!-- ========================================= -->
+
+<section class="py-5 text-center">
+
+    <div class="container">
+
+        <div class="card glass border-0 shadow-lg">
+
+            <div class="card-body py-5">
+
+                <h2 class="fw-bold">
+
+                    Thank You for Your Patience
+
+                </h2>
+
+                <p class="lead text-muted">
+
+                    LexAI is designed to provide reliable AI-powered legal
+                    assistance. If this issue persists, please try again
+                    later.
+
+                </p>
+
+                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+
+                    <button
+                        onclick="location.reload();"
+                        class="btn btn-danger btn-lg">
+
+                        <i class="bi bi-arrow-repeat me-2"></i>
+
+                        Retry
+
+                    </button>
+
+                    <a href="{{ url_for('home.home') }}"
+                       class="btn btn-outline-primary btn-lg">
+
+                        <i class="bi bi-house-door-fill me-2"></i>
+
+                        Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
