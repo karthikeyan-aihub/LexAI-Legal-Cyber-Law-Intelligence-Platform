@@ -13,8 +13,13 @@ chat_bp = Blueprint(
 )
 
 # Load LexAI once when Flask starts
-rag = LexAIRAG()
+rag = None
 
+def get_rag():
+    global rag
+    if rag is None:
+        rag = LexAIRAG()
+    return rag
 
 @chat_bp.route("/chat")
 def chat():
@@ -41,8 +46,8 @@ def api_chat():
 
     try:
 
-        result = rag.ask(question)
-
+        result = get_rag().ask(question)
+        
         return jsonify(result)
 
     except Exception as e:
